@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage test</title>
+  </head>
+  <style>
+  @keyframes openwindow {
+  from { opacity: 0; transform: perspective(750px) rotateX(15deg) rotateY(5deg); }
+  to { opacity: 1; transform: perspective(750px) rotateX(0deg) rotateY(0deg); }
+  }
+  body { 
+   font-family: Segoe UI;
+   background-image: url(/lh/aero.jpg);
+   background-color: black;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   overflow: hidden;
+  }
+  .titlebar:before {
+    content: url(https://gliczide.neocities.org/lh/STREAM506.png);
+    position: relative;
+    top: 3px;
+    left: 1px;
+  }
+  .titlebar {
+    position: relative;
+    z-index: 1;
+    left: 400px;
+    float: left;
+    user-select: none;
+    text-shadow: 0px 0px 3px white;
+        animation: openwindow 0.3s;
+  }
+  .notepad {
+    background-color: white;
+    width: 783px;
+    height: 571px;
+    position: relative;
+    top: 27px;
+    font-size: 17px;
+    text-align: left;
+   }
+   .window {
+    width: 801px;
+    height: 607px;
+    background-image: url(/lh/window.png);
+    display: block;
+    animation: openwindow 0.3s;
+    backdrop-filter: blur(3px);
+    user-select: none;
+   }
+   .window:hover {
+     filter: drop-shadow(0px 0px 5px black);
+     background-image: url(/lh/windowhover.png);
+    }
+   .close {
+    transition: .1s;
+    width: 44px;
+    position: relative;
+    float: right;
+    left: 49px;
+    user-select: none;
+    z-index: 2;
+    }
+    .close:hover {
+      filter: drop-shadow(0px 0px 5px #FFBF8C);
+    }
+    .max, .min {
+    float: right;
+    position: relative;
+    left: -22px;
+    user-select: none;
+    }
+    .max:hover, .min:hover {
+      filter: drop-shadow(0px 0px 5px #23C3F9);
+    }
+    .min {
+    left: -77px !important;
+    }
+   .taskbar {
+    width: 100%;
+    height: 30px;
+    background-image: url(lh/taskbar.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    }
+    .start {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    }
+    .time {
+    float: right;
+    position: relative;
+    left: -15px;
+    top: 5px;
+    }
+    .computer {
+    width: 48px;
+    color: white;
+    text-shadow: 0px 2px 3px black, 0px 2px 3px black, 2px 0px 3px black;
+    font-size: 12px;
+    position: absolute;
+    left: 1%;
+    }
+    .computer img {
+    padding: 3px;
+    padding-left: 8px;
+    }
+    #close:target ~ .window {
+        visibility: hidden;
+    }
+  </style>
+  <div align="center">
+  <body>
+  <div class="computer">
+  <img src="lh/computer.png"> 
+  <br>Computer</div>
+  <div class="titlebar">
+  Notepad</div>
+  <div class="window">
+  <div class="min"> 
+  <img src="lh/min.png" onmouseover="this.src='lh/minhover.png'" onmousedown="this.src='lh/minactive.png'" onmouseup="this.src='lh/minhover.png'" onmouseout="this.src='lh/min.png'" draggable="false"></div>
+  <div class="max"> 
+  <img src="lh/max.png" onmouseover="this.src='lh/maxhover.png'" onmousedown="this.src='lh/maxactive.png'" onmouseup="this.src='lh/maxhover.png'" onmouseout="this.src='lh/max.png'" draggable="false"></div>
+  <div class="close"> 
+  <img src="lh/close.png" onmouseover="this.src='lh/closehover.png'" onmousedown="this.src='lh/closeactive.png'" onmouseup="this.src='lh/closehover.png'" onmouseout="this.src='lh/close.png'" draggable="false"></div>
+    <div class="notepad">
+    WORKING IN PROGRESS! (OWNERS ROOM)
+    <br>
+   Social: 
+   <br>
+   <a href="https://youtube.com">Youtube</a> <a href="https://twitter.com">Twitter</a> <a href="https://discord.com">Discord</a>
+   <br>
+   Sharing: 
+   <br>
+   <a href="https://drive.google.com">Google Drive</a> <a href="https://drive.google.com">Anonfiles</a> <a href="https://mega.nz">Mega</a> <a href="https://mediafire.com">MediaFire</a> <a href="https://dropbox.com">Dropbox</a>
+   <br>
+   Developers: 
+   <br>
+   <a href="https://github.com">Github</a></div></div>
+   <div class="taskbar">
+   <div class="start">
+   <img src="lh/start.png" onmouseover="this.src='lh/starthover.png'" onmousedown="this.src='lh/startactive.png'" onmouseup="this.src='lh/starthover.png'" onmouseout="this.src='lh/start.png'" draggable="false"></a></div>
+       <div class="time">
+       <script>
+function getTime(date) {
+    let hrs = date.getHours();
+    let mins = date.getMinutes();
+    let ampm = hrs >= 12 ? 'PM' : 'AM';
+    hrs = hrs % 12;
+    hrs = hrs ? hrs : 12;
+    mins = mins < 10 ? '0' + mins : mins;
+    const time = document.querySelector('.time');
+    time.textContent = hrs + ':' + mins + ' ' + ampm;
+}
+
+setInterval(() => {
+    getTime(new Date);
+}, 0);
+</script>
+  </body>
+</html>
