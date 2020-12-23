@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://gliczide.neocities.org/lh/favicon.ico">
     <title>homepage test</title>
   </head>
   <style>
@@ -97,9 +98,11 @@
     .time {
     float: right;
     position: relative;
-    left: -15px;
+    left: -32px;
     top: 5px;
-    }
+    color: white;
+    z-index: 1;
+     }
     .computer {
     width: 48px;
     color: white;
@@ -115,9 +118,25 @@
     #close:target ~ .window {
         visibility: hidden;
     }
+    .tray {
+    float: right;
+    left: -9.8rem;
+    position: relative;
+    top: 6px;
+}
+    .sidebar {
+    width: 150px;
+    height: 100%;
+    background-image: url(https://gliczide.neocities.org/lh/sidebar.png);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    }
   </style>
   <div align="center">
   <body>
+  <div class="sidebar"></div>
   <div class="computer">
   <img src="https://gliczide.neocities.org/lh/computer.png"> 
   <br>Computer</div>
@@ -145,6 +164,7 @@
    <div class="taskbar">
    <div class="start">
    <img src="https://gliczide.neocities.org/lh/start.png" onmouseover="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmousedown="this.src='lh/startactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/start.png'" draggable="false"></a></div>
+   <div class="tray"><img src="https://gliczide.neocities.org/lh/tray.png" onmouseover="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/tray.png'" draggable="false" onmousedown="this.src='https://gliczide.neocities.org/lh/trayactive.png'"></div>
        <div class="time">
        <script>
 function getTime(date) {
