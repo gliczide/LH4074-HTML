@@ -21,6 +21,9 @@
    background-repeat: no-repeat;
    overflow: hidden;
   }
+  .titlebar, .start, .window, .close, .max, .min, .taskbar, .start, .time, .tray, .computer, .build, .sidebar {
+        user-select: none;
+  }
   .titlebar:before {
     content: url(https://gliczide.neocities.org/lh/STREAM506.png);
     position: relative;
@@ -30,11 +33,11 @@
   .titlebar {
     position: relative;
     z-index: 1;
-    left: 400px;
-    float: left;
-    user-select: none;
+    left: -21.8rem;
+    top: 23px;
     text-shadow: 0px 0px 3px white;
-        animation: openwindow 0.3s;
+    animation: openwindow 0.3s;
+    width: 100px;
   }
   .notepad {
     background-color: white;
@@ -53,7 +56,6 @@
     animation: openwindow 0.3s;
     backdrop-filter: blur(3px);
     filter: drop-shadow(0px 0px 5px black);
-    user-select: none;
    }
    .window:hover {
      background-image: url(https://gliczide.neocities.org/lh/windowhover.png);
@@ -64,7 +66,6 @@
     position: relative;
     float: right;
     left: 49px;
-    user-select: none;
     z-index: 2;
     }
     .close:hover {
@@ -74,7 +75,6 @@
     float: right;
     position: relative;
     left: -22px;
-    user-select: none;
     }
     .max:hover, .min:hover {
       filter: drop-shadow(0px 0px 5px #23C3F9);
@@ -115,15 +115,12 @@
     padding: 3px;
     padding-left: 8px;
     }
-    #close:target ~ .window {
-        visibility: hidden;
-    }
     .tray {
     float: right;
     left: -9.8rem;
     position: relative;
     top: 6px;
-}
+    }
     .sidebar {
     width: 150px;
     height: 100%;
@@ -133,6 +130,15 @@
     right: 0;
     z-index: 1;
     }
+    .build {
+    color: white;
+    position: absolute;
+    left: 77.8rem;
+    bottom: 2rem;
+    width: 202px;
+    float: right;
+    text-align: right;
+     }
   </style>
   <div align="center">
   <body>
@@ -150,20 +156,18 @@
   <div class="close"> 
   <img src="https://gliczide.neocities.org/lh/close.png" onmouseover="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/closeactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/close.png'" draggable="false"></div>
     <div class="notepad">
-   Social: 
-   <br>
-   <a href="https://youtube.com">Youtube</a> <a href="https://twitter.com">Twitter</a> <a href="https://discord.com">Discord</a>
-   <br>
-   Sharing: 
-   <br>
-   <a href="https://drive.google.com">Google Drive</a> <a href="https://anonfiles.com">Anonfiles</a> <a href="https://mega.nz">Mega</a> <a href="https://mediafire.com">MediaFire</a> <a href="https://dropbox.com">Dropbox</a>
-   <br>
-   Developers: 
-   <br>
-   <a href="https://github.com">Github</a></div></div>
+    Longhorn 4074 in HTML.
+    <br>
+    Original Idea/Project by Gliczide.
+    </div></div>
+    <div class="build">
+    Windows Longhorn
+    <br>
+    Evaluation Copy. Build 4074
+    </div>
    <div class="taskbar">
    <div class="start">
-   <img src="https://gliczide.neocities.org/lh/start.png" onmouseover="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmousedown="this.src='lh/startactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/start.png'" draggable="false"></a></div>
+   <img src="https://gliczide.neocities.org/lh/start.png" onmouseover="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/startactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/start.png'" draggable="false"></div>
    <div class="tray"><img src="https://gliczide.neocities.org/lh/tray.png" onmouseover="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/tray.png'" draggable="false" onmousedown="this.src='https://gliczide.neocities.org/lh/trayactive.png'"></div>
        <div class="time">
        <script>
