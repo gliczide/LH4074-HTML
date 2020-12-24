@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://gliczide.neocities.org/lh/favicon.ico">
     <title>homepage test</title>
-  </head>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+  $( function() {
+    $("#window").draggable();
+  } );
+  </script>
+<script>
+function getTime(date) {
+    let hrs = date.getHours();
+    let mins = date.getMinutes();
+    let ampm = hrs >= 12 ? 'PM' : 'AM';
+    hrs = hrs % 12;
+    hrs = hrs ? hrs : 12;
+    mins = mins < 10 ? '0' + mins : mins;
+    const time = document.querySelector('.time');
+    time.textContent = hrs + ':' + mins + ' ' + ampm;
+}
+
+setInterval(() => {
+    getTime(new Date);
+}, 0);
+</script>
   <style>
   @keyframes openwindow {
   from { opacity: 0; transform: perspective(750px) rotateX(15deg) rotateY(5deg); }
   to { opacity: 1; transform: perspective(750px) rotateX(0deg) rotateY(0deg); }
   }
+  @keyframes closewindow {
+  form { opacity: 1; transform: perspective(750px) rotateX(0deg) rotateY(0deg); }
+  to { opacity: 0; transform: perspective(750px) rotateX(15deg) rotateY(5deg); }
+  }
   body { 
    font-family: Segoe UI;
-   background-image: url(/lh/aero.jpg);
+   background-image: url(https://gliczide.neocities.org/lh/aero.jpg);
    background-color: black;
    background-size: cover;
    background-position: center;
@@ -29,12 +55,12 @@
     position: relative;
     top: 3px;
     left: 1px;
+    padding: 5px;
   }
   .titlebar {
     position: relative;
     z-index: 1;
     left: -21.8rem;
-    top: 23px;
     text-shadow: 0px 0px 3px white;
     animation: openwindow 0.3s;
     width: 100px;
@@ -44,11 +70,11 @@
     width: 783px;
     height: 571px;
     position: relative;
-    top: 27px;
+    top: 4px;
     font-size: 17px;
     text-align: left;
    }
-   .window {
+   #window {
     width: 801px;
     height: 607px;
     background-image: url(https://gliczide.neocities.org/lh/window.png);
@@ -57,7 +83,7 @@
     backdrop-filter: blur(3px);
     filter: drop-shadow(0px 0px 5px black);
    }
-   .window:hover {
+   #window:hover {
      background-image: url(https://gliczide.neocities.org/lh/windowhover.png);
     }
    .close {
@@ -81,6 +107,9 @@
     }
     .min {
     left: -77px !important;
+    }
+    .min, .max, .close {
+    top: -23px;
     }
    .taskbar {
     width: 100%;
@@ -139,22 +168,21 @@
     float: right;
     text-align: right;
      }
-  </style>
+  </style></head>
   <div align="center">
   <body>
   <div class="sidebar"></div>
   <div class="computer">
   <img src="https://gliczide.neocities.org/lh/computer.png"> 
   <br>Computer</div>
-  <div class="titlebar">
-  Notepad</div>
-  <div class="window">
+  <div id="window" class="ui-widget-content">
+    <div class="titlebar">Notepad</div>
   <div class="min"> 
   <img src="https://gliczide.neocities.org/lh/min.png" onmouseover="this.src='https://gliczide.neocities.org/lh/minhover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/minactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/minhover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/min.png'" draggable="false"></div>
   <div class="max"> 
   <img src="https://gliczide.neocities.org/lh/max.png" onmouseover="this.src='https://gliczide.neocities.org/lh/maxhover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/maxactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/maxhover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/max.png'" draggable="false"></div>
   <div class="close"> 
-  <img src="https://gliczide.neocities.org/lh/close.png" onmouseover="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/closeactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/close.png'" draggable="false"></div>
+  <a href="#"><img src="https://gliczide.neocities.org/lh/close.png" onmouseover="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/closeactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/closehover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/close.png'" draggable="false"></a></div>
     <div class="notepad">
     Longhorn 4074 in HTML.
     <br>
@@ -170,21 +198,5 @@
    <img src="https://gliczide.neocities.org/lh/start.png" onmouseover="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmousedown="this.src='https://gliczide.neocities.org/lh/startactive.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/starthover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/start.png'" draggable="false"></div>
    <div class="tray"><img src="https://gliczide.neocities.org/lh/tray.png" onmouseover="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseup="this.src='https://gliczide.neocities.org/lh/trayhover.png'" onmouseout="this.src='https://gliczide.neocities.org/lh/tray.png'" draggable="false" onmousedown="this.src='https://gliczide.neocities.org/lh/trayactive.png'"></div>
        <div class="time">
-       <script>
-function getTime(date) {
-    let hrs = date.getHours();
-    let mins = date.getMinutes();
-    let ampm = hrs >= 12 ? 'PM' : 'AM';
-    hrs = hrs % 12;
-    hrs = hrs ? hrs : 12;
-    mins = mins < 10 ? '0' + mins : mins;
-    const time = document.querySelector('.time');
-    time.textContent = hrs + ':' + mins + ' ' + ampm;
-}
-
-setInterval(() => {
-    getTime(new Date);
-}, 0);
-</script>
   </body>
 </html>
